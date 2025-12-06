@@ -1,11 +1,24 @@
 package com.omayma.calculator;
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 public class CalculatorTest {
-    @Test
-    public void testAdd(){
-        Calculator calculator= new Calculator();
-        int result= calculator.add(2,3);
-        assertEquals(5,result,"2+3 doit etre égal a 5");
+        @Test
+        public void testAddition(){
+            Calculator c = new Calculator();
+            assertEquals(7, c.add(3,4));
+        }
+        @Test
+        public void testDivision(){
+            Calculator c =new Calculator();
+            assertEquals(5, c .divide(10,2));
+        }
+        @Test
+        public void testDivisionByZero() {
+            Calculator c = new Calculator();
+            assertThrows(ArithmeticException.class, () -> c.divide(10, 0));
+        }
+
     }
-}
+
